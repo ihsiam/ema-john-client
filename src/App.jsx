@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 import { fetchUser } from "./app/actions/userAction";
+import Header from "./components/home/Header";
 
 function App() {
   const dispatch = useDispatch();
@@ -8,13 +10,12 @@ function App() {
   useEffect(() => {
     dispatch(fetchUser());
   }, [dispatch]);
-  console.log(error);
-  console.log(user);
-  console.log(isAuth);
-  console.log(loading);
+  console.log(loading, user, error, isAuth);
+
   return (
     <div>
-      <h1>app</h1>
+      <Header activeHeading={1} />
+      <Outlet />
     </div>
   );
 }

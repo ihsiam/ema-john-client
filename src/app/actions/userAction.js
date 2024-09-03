@@ -9,4 +9,4 @@ export const fetchUser = createAsyncThunk('user/fetchUser', async(_, {rejectWith
     }catch(error){
         return rejectWithValue(error.response.data.msg)
     }   
-} );
+});
