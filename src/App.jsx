@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchUser());
   }, [dispatch]);
-  console.log(loading, user, error, isAuth);
+  console.log({ loading, user, error, isAuth });
 
   return (
     <div>
