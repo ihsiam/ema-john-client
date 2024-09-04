@@ -34,28 +34,28 @@ export default function Header({ activeHeading }) {
   };
 
   window.addEventListener("scroll", () => {
-    window.screenY > 70 ? setActive(true) : setActive(false);
+    window.scrollY > 70 ? setActive(true) : setActive(false);
   });
 
   return (
     <>
       {/* 1st bar(logo, search, sellerBtn) */}
       <div className={`${styles.section}`}>
-        <div className="hidden md:flex md:justify-between md:h-[50px] md:items-center md:my-[20px]">
+        <div className="hidden md:flex md:justify-between md:h-[50px] md:items-center md:my-[15px] lg:my-[20px]">
           {/* logo */}
           <div>
             <Link to="/">
-              <img src={logo} alt="" srcSet="" />
+              <img src={logo} alt="" srcSet="" className="w-[150px]" />
             </Link>
           </div>
           {/* searchbar */}
-          <div className="w-[50%] relative">
+          <div className="w-[40%] lg:w-[50%] relative">
             <input
               type="text"
               value={searchTitle}
               onChange={handleSearch}
               placeholder="Search Product..."
-              className="h-[40px] w-full border-[#3987db] border-2 rounded-md outline-none px-3"
+              className="h-[40px] w-full border-[#3987db] border-2 rounded-md px-3"
             />
             <AiOutlineSearch
               size={30}
@@ -69,13 +69,13 @@ export default function Header({ activeHeading }) {
                     const productName = item.name.replace(/\s+/g, "-");
                     return (
                       <Link to={`/product/${productName}`} key={productName}>
-                        <div className="w-full flex items-start py-3">
+                        <div className="w-full flex items-center py-3">
                           <img
                             src={item.image_Url[0].url}
                             alt=""
-                            className="h-[40px] w-[40px] mr-[10px]"
+                            className="h-[35px] w-[35px] mr-[10px]"
                           />
-                          <h1>{item.name}</h1>
+                          <h1 className="text-sm">{item.name}</h1>
                         </div>
                       </Link>
                     );
@@ -103,8 +103,8 @@ export default function Header({ activeHeading }) {
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
         >
           {/* category box */}
-          <div>
-            <div className="relative h-[60px] mt-[10px] w-[270px] hidden md:block">
+          <div onClick={() => setDropDown(!dropDown)}>
+            <div className="relative h-[60px] mt-[10px] w-[200px] lg:w-[270px] hidden md:block">
               <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
               <button className="h-[100%] w-full flex items-center justify-between pl-10 font-sans bg-white text-lg font-[500] rounded-t-md select-none">
                 All Categories
@@ -112,7 +112,6 @@ export default function Header({ activeHeading }) {
               <IoIosArrowDown
                 size={20}
                 className="absolute top-4 right-2 cursor-pointer"
-                onClick={() => setDropDown(!dropDown)}
               />
               {dropDown ? (
                 <DropDownCtg
@@ -130,14 +129,14 @@ export default function Header({ activeHeading }) {
           <div>
             <div className={`${styles.noramlFlex}`}>
               {/* wishlist */}
-              <div className="relative cursor-pointer mr-[15px]">
+              <div className="relative cursor-pointer ml-[15px]">
                 <AiOutlineHeart size={30} color="rgb(255 255 255 /83%)" />
                 <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 p-0 m-0 text-white leading-tight text-[12px] text-center font-mono">
                   0
                 </span>
               </div>
               {/* cart */}
-              <div className="relative cursor-pointer mr-[15px]">
+              <div className="relative cursor-pointer ml-[10px] lg:ml-[15px]">
                 <AiOutlineShoppingCart
                   size={30}
                   color="rgb(255 255 255 /83%)"
@@ -147,7 +146,7 @@ export default function Header({ activeHeading }) {
                 </span>
               </div>
               {/* profile */}
-              <div className="relative cursor-pointer mr-[15px]">
+              <div className="relative cursor-pointer ml-[10px] lg:ml-[15px]">
                 <Link to="/log-in">
                   <CgProfile size={30} color="rgb(255 255 255 /83%)" />
                 </Link>

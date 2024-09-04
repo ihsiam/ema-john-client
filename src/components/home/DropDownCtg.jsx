@@ -10,7 +10,7 @@ export default function DropDownCtg({ categoriesData, setDropDown }) {
     window.location.reload();
   };
   return (
-    <div className="pb-4 w-[270px] bg-white absolute shadow-md rounded-b-md z-30">
+    <div className="pb-4 w-[200px] lg:w-[270px] bg-white absolute shadow-md rounded-b-md z-30">
       {categoriesData &&
         categoriesData.map((ctg) => (
           <div
@@ -20,7 +20,7 @@ export default function DropDownCtg({ categoriesData, setDropDown }) {
           >
             <img
               src={ctg.image_Url}
-              className="w-6 h-6 object-contain ml-3 select-none"
+              className="w-6 h-6 object-contain ml-2 lg:ml-3 select-none"
               alt=""
               srcSet=""
             />

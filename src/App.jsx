@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { fetchUser } from "./app/actions/userAction";
 import Header from "./components/home/Header";
+import Footer from "./components/others/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function App() {
     <div>
       <Header activeHeading={1} />
       <Outlet />
+      <Footer />
     </div>
   );
 }

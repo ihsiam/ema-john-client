@@ -13,7 +13,7 @@ export default function Navbar({ activeHeading }) {
               to={item.url}
               className={`${
                 activeHeading === index + 1 ? "text-[#17dd1f]" : "text-[#fff]"
-              } font-[500] px-6 cursor-pointer`}
+              } font-[500] px-2 lg:px-6 cursor-pointer`}
             >
               {item.title}
             </Link>
