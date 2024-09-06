@@ -11,7 +11,6 @@ import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.svg";
 import { categoriesData, productData } from "../../static/data";
-import styles from "../../style/styles";
 import DropDownCtg from "./DropDownCtg";
 import Navbar from "./Navbar";
 
@@ -40,7 +39,7 @@ export default function Header({ activeHeading }) {
   return (
     <>
       {/* 1st bar(logo, search, sellerBtn) */}
-      <div className={`${styles.section}`}>
+      <div className="w-11/12 mx-auto">
         <div className="hidden md:flex md:justify-between md:h-[50px] md:items-center md:my-[15px] lg:my-[20px]">
           {/* logo */}
           <div>
@@ -84,7 +83,7 @@ export default function Header({ activeHeading }) {
             ) : null}
           </div>
           {/* seller button */}
-          <div className={`${styles.button}`}>
+          <div className="button">
             <Link to="/seller">
               <h1 className="text-[#fff] flex items-center">
                 Become Seller <IoIosArrowForward className="ml-1" />
@@ -100,7 +99,7 @@ export default function Header({ activeHeading }) {
         } transition hidden md:flex w-full items-center justify-between bg-[#3321c8] h-[70px]`}
       >
         <div
-          className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
+          className={`w-11/12 mx-auto relative flex items-center justify-between`}
         >
           {/* category box */}
           <div onClick={() => setDropDown(!dropDown)}>
@@ -122,12 +121,12 @@ export default function Header({ activeHeading }) {
             </div>
           </div>
           {/* navbar */}
-          <div className={`${styles.noramlFlex}`}>
+          <div className="flex items-center">
             <Navbar activeHeading={activeHeading} />
           </div>
           {/* wishlist, cart and profile */}
           <div>
-            <div className={`${styles.noramlFlex}`}>
+            <div className="flex items-center">
               {/* wishlist */}
               <div className="relative cursor-pointer ml-[15px]">
                 <AiOutlineHeart size={30} color="rgb(255 255 255 /83%)" />

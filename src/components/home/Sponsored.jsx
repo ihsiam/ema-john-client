@@ -1,10 +1,6 @@
-import styles from "../../style/styles";
-
 const Sponsored = () => {
   return (
-    <div
-      className={`${styles.section} hidden md:block shadow bg-white py-10 px-5 mb-12 cursor-pointer rounded-xl`}
-    >
+    <div className="mx-auto w-11/12 hidden md:block shadow bg-white py-10 px-5 mb-12 cursor-pointer rounded-xl">
       <div className="flex justify-between w-full">
         <div className="flex items-start">
           <img

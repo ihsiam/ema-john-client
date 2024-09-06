@@ -8,7 +8,6 @@ import {
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import styles from "../../style/styles";
 import ProductModal from "./ProductModal";
 
 const ProductCard = ({ data }) => {
@@ -30,7 +29,7 @@ const ProductCard = ({ data }) => {
           />
         </Link>
         <Link to="/">
-          <h5 className={`${styles.shop_name}`}>{data.shop.name}</h5>
+          <h5 className="shop_name">{data.shop.name}</h5>
         </Link>
         <Link to={`/product/${product_name}`}>
           <h4 className="pb-3 font-[500]">
@@ -47,12 +46,10 @@ const ProductCard = ({ data }) => {
 
           <div className="py-2 flex items-center justify-between">
             <div className="flex">
-              <h5 className={`${styles.productDiscountPrice}`}>
+              <h5 className="productDiscountPrice">
                 {data.price === 0 ? data.price : data.discount_price}$
               </h5>
-              <h4 className={`${styles.price}`}>
-                {data.price ? data.price + " $" : null}
-              </h4>
+              <h4 className="price">{data.price ? data.price + " $" : null}</h4>
             </div>
             <span className="font-[400] text-[17px] text-[#68d284]">
               {data.total_sell} sold
@@ -100,7 +97,7 @@ const ProductCard = ({ data }) => {
 };
 
 ProductCard.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default ProductCard;

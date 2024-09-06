@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { brandingData, categoriesData } from "../../static/data";
-import styles from "../../style/styles";
 
 const Categories = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className={`${styles.section} hidden sm:block shadow`}>
+      <div className="w-11/12 mx-auto hidden sm:block shadow">
         <div className="my-8 lg:my-12 flex justify-between w-full shadow-sm bg-white p-1 lg:p-2 rounded-md">
           {brandingData &&
             brandingData.map((brand, index) => (
@@ -24,7 +23,7 @@ const Categories = () => {
       </div>
 
       <div
-        className={`${styles.section} py-5 md:p-0 rounded-lg mb-4 md:mb-12`}
+        className="w-11/12 mx-auto py-5 md:p-0 rounded-lg mb-4 md:mb-12"
         id="categories"
       >
         <div className="grid grid-cols-1 gap-[8px] md:grid-cols-2 md:gap-[10px] lg:grid-cols-4 lg:gap-[20px] xl:grid-cols-5 xl:gap-[30px]">

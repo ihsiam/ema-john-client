@@ -1,11 +1,10 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { navItems } from "../../static/data";
-import styles from "../../style/styles";
 
 export default function Navbar({ activeHeading }) {
   return (
-    <div className={`${styles.noramlFlex}`}>
+    <div className="flex items-center">
       {navItems &&
         navItems.map((item, index) => (
           <div key={index}>

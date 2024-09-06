@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import styles from "../../style/styles";
 
 export default function DropDownCtg({ categoriesData, setDropDown }) {
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ export default function DropDownCtg({ categoriesData, setDropDown }) {
           <div
             key={ctg.title}
             onClick={() => handleSubmit(ctg)}
-            className={`${styles.noramlFlex}`}
+            className="flex items-center"
           >
             <img
               src={ctg.image_Url}

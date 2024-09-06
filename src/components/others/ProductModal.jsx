@@ -8,7 +8,6 @@ import {
 } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import styles from "../../style/styles";
 const ProductModal = ({ setOpen, data }) => {
   const [count, setCount] = useState(1);
   const [click, setClick] = useState(false);
@@ -29,7 +28,7 @@ const ProductModal = ({ setOpen, data }) => {
     <div className="bg-[#fff]">
       {data ? (
         <div className="fixed w-full h-screen top-0 left-0 bg-[#00000030] z-40 flex items-center justify-center">
-          <div className="w-[90%] md:w-[90%] lg:w-[60%] h-[90vh] overflow-y-scroll md:h-[75vh] bg-white rounded-md shadow-sm relative p-4">
+          <div className="w-[90%] lg:w-[60%] h-[90vh] overflow-y-scroll md:h-[75vh] bg-white rounded-md shadow-sm relative p-4">
             <RxCross1
               size={30}
               className="absolute right-3 top-3 z-50"
@@ -47,9 +46,7 @@ const ProductModal = ({ setOpen, data }) => {
                       className="w-[50px] h-[50px] rounded-full mr-2"
                     />
                     <div>
-                      <h3 className={`${styles.shop_name}`}>
-                        {data.shop.name}
-                      </h3>
+                      <h3 className="shop_name">{data.shop.name}</h3>
                       <h5 className="pb-3 text-[15px]">
                         {data.shop.ratings} Ratings
                       </h5>
@@ -57,7 +54,7 @@ const ProductModal = ({ setOpen, data }) => {
                   </Link>
                 </div>
                 <div
-                  className={`${styles.button} bg-[#000] mt-4 rounded-[4px] h-11`}
+                  className="button bg-[#000] mt-4 rounded-[4px] h-11"
                   onClick={handleMessageSubmit}
                 >
                   <span className="text-[#fff] flex items-center">
@@ -68,16 +65,14 @@ const ProductModal = ({ setOpen, data }) => {
               </div>
 
               <div className="w-full md:w-[50%] pt-5 pl-[5px] pr-[5px]">
-                <h1 className={`${styles.productTitle} text-[20px]`}>
-                  {data.name}
-                </h1>
+                <h1 className="productTitle text-[20px]">{data.name}</h1>
                 <p>{data.description}</p>
 
                 <div className="flex pt-3">
-                  <h4 className={`${styles.productDiscountPrice}`}>
+                  <h4 className="productDiscountPrice">
                     {data.discount_price}$
                   </h4>
-                  <h3 className={`${styles.price}`}>
+                  <h3 className="price">
                     {data.price ? data.price + "$" : null}
                   </h3>
                 </div>
@@ -118,9 +113,7 @@ const ProductModal = ({ setOpen, data }) => {
                     )}
                   </div>
                 </div>
-                <div
-                  className={`${styles.button} mt-6 rounded-[4px] h-11 flex items-center`}
-                >
+                <div className="button mt-6 rounded-[4px] h-11 flex items-center">
                   <span className="text-[#fff] flex items-center">
                     Add to cart <AiOutlineShoppingCart className="ml-1" />
                   </span>

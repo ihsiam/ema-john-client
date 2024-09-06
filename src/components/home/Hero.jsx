@@ -1,19 +1,12 @@
 import { Link } from "react-router-dom";
 import xbox from "../../assets/img/xbox.png";
-import styles from "../../style/styles";
 
 const Hero = () => {
   return (
-    <div
-      className={`relative min-h-[70vh] lg:min-h-[80vh] w-full bg-no-repeat bg-[#d9d8d6] justify-between ${styles.noramlFlex}`}
-    >
-      <div
-        className={`${styles.section} flex flex-col-reverse md:flex-row md:justify-between items-center`}
-      >
+    <div className="relative min-h-[70vh] lg:min-h-[80vh] w-full bg-no-repeat bg-[#d9d8d6] flex items-center justify-between">
+      <div className="mx-auto w-11/12 flex flex-col-reverse md:flex-row md:justify-between items-center">
         <div className="md:w-[60%] px-2 pb-4 md:px-0 md:pb-0">
-          <h1
-            className={`text-[30px] leading-[1.2] lg:text-[60px] text-[#3d3a3a] font-[600] capitalize`}
-          >
+          <h1 className="text-[30px] leading-[1.2] lg:text-[60px] text-[#3d3a3a] font-[600] capitalize">
             Best Collection of <br /> Gadget and Gears
           </h1>
           <p className="pt-5 text-[16px] font-[Poppins] font-[400] text-[#000000ba]">
@@ -23,7 +16,7 @@ const Hero = () => {
             <br /> aliquam deserunt officia. Dolorum saepe nulla provident.
           </p>
           <Link to="/products" className="inline-block">
-            <div className={`${styles.button} mt-5`}>
+            <div className="button mt-5">
               <span className="text-[#fff] font-[Poppins] text-[18px]">
                 Shop Now
               </span>
