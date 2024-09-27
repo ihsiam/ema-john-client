@@ -7,18 +7,23 @@ import Footer from "./components/others/Footer";
 
 function App() {
   const dispatch = useDispatch();
-  const { loading, user, error, isAuth } = useSelector((state) => state.User);
+  const { loading } = useSelector((state) => state.User);
   useEffect(() => {
     dispatch(fetchUser());
   }, [dispatch]);
-  console.log(loading, user, error, isAuth);
 
   return (
-    <div>
-      <Header activeHeading={1} />
-      <Outlet />
-      <Footer />
-    </div>
+    <>
+      {loading ? (
+        <div>Loading</div>
+      ) : (
+        <div>
+          <Header />
+          <Outlet />
+          <Footer />
+        </div>
+      )}
+    </>
   );
 }
 

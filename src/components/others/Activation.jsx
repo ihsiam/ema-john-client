@@ -1,9 +1,10 @@
 import axios from "axios";
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../../utility/baseUrl";
 
-export default function Activation() {
+export default function Activation({ role }) {
   const { token } = useParams();
   const [response, setRes] = useState(null);
 
@@ -12,7 +13,7 @@ export default function Activation() {
       const sendReq = async () => {
         await axios
           .post(
-            `${baseUrl}/user/activate`,
+            `${baseUrl}/${role}/activate`,
             { token },
             { withCredentials: true }
           )
@@ -29,7 +30,7 @@ export default function Activation() {
       };
       sendReq();
     }
-  }, [token]);
+  }, [token, role]);
 
   return (
     <div className=" w-full h-screen flex justify-center items-center">
@@ -37,3 +38,7 @@ export default function Activation() {
     </div>
   );
 }
+
+Activation.propTypes = {
+  role: PropTypes.string.isRequired,
+};

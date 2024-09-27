@@ -1,5 +1,5 @@
 import { productData } from "../../static/data";
-import ProductCard from "../others/ProductCard";
+import ProductCard from "../product/ProductCard";
 const FeaturedProduct = () => {
   return (
     <div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { productData } from "../../static/data";
-import ProductCard from "../others/ProductCard";
+import ProductCard from "../product/ProductCard";
 
 const BestDeals = () => {
   const [data, setData] = useState([]);

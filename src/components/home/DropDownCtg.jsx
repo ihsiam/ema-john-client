@@ -6,7 +6,6 @@ export default function DropDownCtg({ categoriesData, setDropDown }) {
   const handleSubmit = (ctg) => {
     navigate(`/products?category=${ctg.title}`);
     setDropDown(false);
-    window.location.reload();
   };
   return (
     <div className="pb-4 w-[200px] lg:w-[270px] bg-white absolute shadow-md rounded-b-md z-30">

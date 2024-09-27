@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { baseUrl } from "../../utility/baseUrl";
@@ -10,7 +11,15 @@ export default function Login() {
   const [pass, setPass] = useState("");
   const [eye, setEye] = useState(false);
 
+  const { isAuth } = useSelector((state) => state.User);
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate(-1);
+    }
+  }, [isAuth, navigate]);
 
   const OnSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +31,6 @@ export default function Login() {
         { withCredentials: true }
       )
       .then((res) => {
-        console.log(res);
         if (res.data.success === true) {
           navigate("/");
         } else {
@@ -31,7 +39,6 @@ export default function Login() {
       })
       .catch((err) => toast.error(err.response.data.msg));
   };
-
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 px-4 lg:px-8 gap-4">
       <div className="w-full mx-auto max-w-md">

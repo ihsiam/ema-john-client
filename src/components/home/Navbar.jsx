@@ -1,17 +1,24 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { navItems } from "../../static/data";
 
-export default function Navbar({ activeHeading }) {
+export default function Navbar({ setOpen }) {
+  const location = useLocation();
   return (
-    <div className="flex items-center">
+    <div className="block md:flex md:items-center">
       {navItems &&
         navItems.map((item, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className="pb-[30px] md:pb-0"
+            onClick={() => setOpen(false)}
+          >
             <Link
               to={item.url}
               className={`${
-                activeHeading === index + 1 ? "text-[#17dd1f]" : "text-[#fff]"
+                location.pathname === item.url
+                  ? "text-[#17dd1f]"
+                  : "text-black md:text-[#fff]"
               } font-[500] px-2 lg:px-6 cursor-pointer`}
             >
               {item.title}
@@ -23,5 +30,5 @@ export default function Navbar({ activeHeading }) {
 }
 
 Navbar.propTypes = {
-  activeHeading: PropTypes.number.isRequired,
+  setOpen: PropTypes.func,
 };
